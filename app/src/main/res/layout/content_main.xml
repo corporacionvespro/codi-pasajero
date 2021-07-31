@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:keepScreenOn="true" >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:background="@color/gris"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:background="@color/gris"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        style="@style/cardSombra" >
+
+        <LinearLayout
+            android:id="@+id/llayBusqueda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:background="@drawable/boton_azul"
+            android:layout_gravity="top"
+            android:orientation="horizontal" >
+
+            <AutoCompleteTextView
+                android:id="@+id/autocomplete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="¿A dónde quieres ir?"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:background="@null"
+                android:textColorHint="@color/blanco"
+                android:textColor="@color/blanco"
+                android:fontFamily="@font/poppins_medium"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿A dónde quieres ir?"
+                android:drawableEnd="@drawable/ic_lupa"
+                android:drawableTint="@color/blanco"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/blanco"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <RelativeLayout
+        android:id="@+id/rlayDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:visibility="gone" >
+
+        <com.sinaseyfi.advancedcardview.AdvancedCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/cardSombra" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="De: "
+                        android:fontFamily="@font/corsa_regular"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/azul" />
+
+                    <TextView
+                        android:id="@+id/tvDireccionOrigen"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/azul"
+                        android:transitionName="tvDireccionOrigen" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A: "
+                        android:fontFamily="@font/corsa_regular"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/azul" />
+
+                    <TextView
+                        android:id="@+id/tvDireccionDestino"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/azul"
+                        android:transitionName="tvDireccionDestino" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp" >
+
+                    <com.sinaseyfi.advancedcardview.AdvancedCardView
+                        android:id="@+id/acvCancelarDireccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        app:background_Color="@color/turquesa"
+                        style="@style/cardSombra" >
+
+                        <Button
+                            android:id="@+id/btnCancelarDireccion"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Cancelar"
+                            style="@style/botonTurquesa" />
+
+                    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+                    <com.sinaseyfi.advancedcardview.AdvancedCardView
+                        android:id="@+id/acvAceptarDireccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        app:background_Color="@color/turquesa"
+                        style="@style/cardSombra" >
+
+                        <Button
+                            android:id="@+id/btnAceptarDireccion"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Siguiente"
+                            style="@style/botonTurquesa" />
+
+                    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    </RelativeLayout>
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/acvUbicacion"
+        android:layout_marginEnd="5dp"
+        style="@style/botonRedondo" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_menu"
+            android:tint="@color/blanco"
+            android:background="@drawable/redondo_azul"
+            android:padding="7.5dp"
+            android:layout_margin="5dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/acvBandera"
+        android:layout_marginEnd="5dp"
+        style="@style/botonRedondo" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_location"
+            android:tint="@color/blanco"
+            android:background="@drawable/redondo_azul"
+            android:padding="7.5dp"
+            android:layout_margin="5dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvBandera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/acvFavoritos"
+        android:layout_marginEnd="5dp"
+        style="@style/botonRedondo" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_bandera"
+            android:tint="@color/blanco"
+            android:background="@drawable/redondo_azul"
+            android:layout_margin="5dp"
+            android:padding="7.5dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvFavoritos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="5dp"
+        style="@style/botonRedondo" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_estrella"
+            android:tint="@color/blanco"
+            android:background="@drawable/redondo_azul"
+            android:layout_margin="5dp"
+            android:padding="7.5dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvMenuNoche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/acvUbicacionNoche"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        style="@style/botonRedondoNoche" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_menu"
+            android:tint="@color/azul"
+            android:background="@drawable/redondo_blanco"
+            android:padding="7.5dp"
+            android:layout_margin="5dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvUbicacionNoche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/acvBanderaNoche"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        style="@style/botonRedondoNoche" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_location"
+            android:tint="@color/azul"
+            android:background="@drawable/redondo_blanco"
+            android:padding="7.5dp"
+            android:layout_margin="5dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvBanderaNoche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/acvFavoritosNoche"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        style="@style/botonRedondoNoche" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_bandera"
+            android:tint="@color/azul"
+            android:background="@drawable/redondo_blanco"
+            android:layout_margin="5dp"
+            android:padding="7.5dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvFavoritosNoche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        style="@style/botonRedondoNoche" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_estrella"
+            android:tint="@color/azul"
+            android:background="@drawable/redondo_blanco"
+            android:layout_margin="5dp"
+            android:padding="7.5dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <FrameLayout
+        android:id="@+id/flayComunicado"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B301286B"
+        android:visibility="gone" >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/blanco"
+            app:cardCornerRadius="25dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="15dp" >
+
+                <TextView
+                    android:id="@+id/tvTituloComunicado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/turquesa"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:layout_marginBottom="15dp" />
+
+                <TextView
+                    android:id="@+id/tvContenidoComunicado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/negro"
+                    android:textAlignment="center"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnAceptarComunicado"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Aceptar"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="15dp"
+                    style="@style/botonAzul" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/llayCargando"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_actualizar_ubicacion"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/splash_c"
+                android:foregroundGravity="center"
+                android:tint="@color/blanco" />
+
+            <ImageView
+                android:id="@+id/ivAnimacion1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/splash_d1"
+                android:visibility="visible"
+                android:foregroundGravity="center"
+                android:tint="@color/turquesa" />
+
+            <ImageView
+                android:id="@+id/ivAnimacion2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/splash_d2"
+                android:visibility="visible"
+                android:foregroundGravity="center"
+                android:tint="@color/turquesa" />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizando\nubicación..."
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:background="@color/fondo"
+    android:theme="@style/Material" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="30dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Código Promocional"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:visibility="gone"
+                android:layout_marginTop="15dp" />
+
+            <com.sinaseyfi.advancedcardview.AdvancedCardView
+                android:id="@+id/acvCodigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                style="@style/cardSombra" >
+
+                <EditText
+                    android:id="@+id/etCodigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ingresa código promocional"
+                    android:inputType="text"
+                    android:background="@null"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColorHint="@color/gris"
+                    android:textColor="@color/gris"
+                    android:textSize="15sp"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp" />
+
+            </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dirección de recojo"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:layout_marginTop="15dp" />
+
+            <com.sinaseyfi.advancedcardview.AdvancedCardView
+                android:id="@+id/acvDireccionOrigen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/cardSombra" >
+
+                <EditText
+                    android:id="@+id/etDireccionOrigen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Dirección de recojo"
+                    android:inputType="textMultiLine"
+                    android:background="@null"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColorHint="@color/gris"
+                    android:textColor="@color/gris"
+                    android:textSize="15sp"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp" />
+
+            </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Referencia"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:layout_marginTop="15dp" />
+
+            <com.sinaseyfi.advancedcardview.AdvancedCardView
+                android:id="@+id/acvReferencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/cardSombra" >
+
+                <EditText
+                    android:id="@+id/etReferencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:background="@null"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColorHint="@color/gris"
+                    android:textColor="@color/gris"
+                    android:textSize="15sp"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp" />
+
+            </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dirección de destino"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:layout_marginTop="15dp" />
+
+            <com.sinaseyfi.advancedcardview.AdvancedCardView
+                android:id="@+id/acvDireccionDestino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/cardSombra" >
+
+                <EditText
+                    android:id="@+id/etDireccionDestino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Dirección de destino"
+                    android:inputType="textMultiLine"
+                    android:background="@null"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColorHint="@color/gris"
+                    android:textColor="@color/gris"
+                    android:textSize="15sp"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp" />
+
+            </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Elige un tipo de servicio"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:layout_marginTop="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginVertical="15dp" >
+
+                <com.sinaseyfi.advancedcardview.AdvancedCardView
+                    android:id="@+id/acvMoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="15dp"
+                    style="@style/cardSombra" >
+
+                    <ImageView
+                        android:id="@+id/ivMoto"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_moto"
+                        android:tint="@color/azul"
+                        android:background="@drawable/redondo_blanco"
+                        android:padding="10dp" />
+
+                </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+                <com.sinaseyfi.advancedcardview.AdvancedCardView
+                    android:id="@+id/acvStandar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/cardSombra" >
+
+                    <LinearLayout
+                        android:id="@+id/llayStandar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@color/blanco"
+                        android:gravity="center"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="5dp" >
+
+                        <ImageView
+                            android:id="@+id/ivStandar"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_taxi"
+                            android:tint="@color/azul"
+                            android:padding="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginVertical="10dp" >
+
+                            <TextView
+                                android:id="@+id/tvEstandar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Estándar"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/azul" />
+
+                            <TextView
+                                android:id="@+id/tvPrecioEstandar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="S/ 5.00"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:textColor="@color/azul" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+                <com.sinaseyfi.advancedcardview.AdvancedCardView
+                    android:id="@+id/acvEjecutivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/cardSombra" >
+
+                    <LinearLayout
+                        android:id="@+id/llayEjecutivo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@color/blanco"
+                        android:gravity="center"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="5dp" >
+
+                        <ImageView
+                            android:id="@+id/ivEjecutivo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_auto"
+                            android:tint="@color/azul"
+                            android:padding="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginVertical="10dp" >
+
+                            <TextView
+                                android:id="@+id/tvEjecutivo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ejecutivo"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/azul" />
+
+                            <TextView
+                                android:id="@+id/tvPrecioEjecutivo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="S/ 6.00"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:textColor="@color/azul" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center" -->
+<!--                android:visibility="gone" >-->
+
+<!--                <com.sinaseyfi.advancedcardview.AdvancedCardView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="10dp"-->
+<!--                    style="@style/cardSombra" >-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:gravity="center"-->
+<!--                        android:background="@drawable/boton_blanco"-->
+<!--                        android:paddingHorizontal="15dp" >-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="S/ "-->
+<!--                            android:textSize="18sp"-->
+<!--                            android:fontFamily="@font/poppins_medium"-->
+<!--                            android:textColor="@color/turquesa" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/tvPrecio"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="0.00"-->
+<!--                            android:textSize="18sp"-->
+<!--                            android:fontFamily="@font/poppins_medium"-->
+<!--                            android:textColor="@color/turquesa"-->
+<!--                            android:visibility="visible"/>-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/etPrecio"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:textSize="18sp"-->
+<!--                            android:text="0.00"-->
+<!--                            android:background="@null"-->
+<!--                            android:fontFamily="@font/poppins_medium"-->
+<!--                            android:textColor="@color/blanco"-->
+<!--                            android:visibility="gone" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/tvPrecioDescontado"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text=""-->
+<!--                            android:textSize="18sp"-->
+<!--                            android:fontFamily="@font/poppins_medium"-->
+<!--                            android:textColor="@color/blanco"-->
+<!--                            android:visibility="gone" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </com.sinaseyfi.advancedcardview.AdvancedCardView>-->
+
+<!--                <com.sinaseyfi.advancedcardview.AdvancedCardView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="10dp"-->
+<!--                    style="@style/cardSombra" >-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:gravity="center"-->
+<!--                        android:background="@drawable/boton_blanco"-->
+<!--                        android:paddingHorizontal="15dp" >-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="18dp"-->
+<!--                            android:layout_height="18dp"-->
+<!--                            android:src="@drawable/ic_nav_perfil"-->
+<!--                            android:tint="@color/turquesa"-->
+<!--                            android:layout_marginEnd="5dp"/>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/tvCantidad"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Estándar"-->
+<!--                            android:textSize="18sp"-->
+<!--                            android:fontFamily="@font/poppins_medium"-->
+<!--                            android:textColor="@color/turquesa"-->
+<!--                            android:layout_marginStart="5dp" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </com.sinaseyfi.advancedcardview.AdvancedCardView>-->
+
+<!--            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/tvMensaje"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/azul"
+                    android:text=""
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <com.sinaseyfi.advancedcardview.AdvancedCardView
+                android:id="@+id/acvPedir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:visibility="gone"
+                style="@style/cardSombra" >
+
+                <Button
+                    android:id="@+id/btnPedirTaxi"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Pedir Servicio"
+                    style="@style/botonAzul" />
+
+            </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/flayCargando"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BF01286B"
+        android:layout_centerInParent="true"
+        android:visibility="gone" >
+
+        <com.github.jlmd.animatedcircleloadingview.AnimatedCircleLoadingView
+            android:id="@+id/circle_loading_view_ds"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            app:mainColor="@color/turquesa"
+            app:secondaryColor="@color/blanco"
+            app:textColor="@color/blanco"
+            app:failureMarkTintColor="@color/turquesa" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Cancelar servicio"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="75dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        style="@style/botonTurquesa" />
+
+</RelativeLayout>

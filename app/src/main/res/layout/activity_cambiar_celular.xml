@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo"
+    android:gravity="center" >
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        style="@style/cardSombra" >
+
+        <EditText
+            android:id="@+id/etNuevoCelular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su nuevo número"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="15sp"
+            android:textColor="@color/azul"
+            android:inputType="phone"
+            android:background="@drawable/boton_blanco"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp" />
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    <Button
+        android:id="@+id/btnGuardarCambios"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Guardar cambios"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="15dp"
+        style="@style/botonTurquesa" />
+
+</LinearLayout>

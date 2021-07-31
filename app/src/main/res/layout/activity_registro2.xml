@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center" >
+
+        <FrameLayout
+            android:id="@+id/flaySubirFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <com.sinaseyfi.advancedcardview.AdvancedCardView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginBottom="15dp"
+                app:cornerRadius="500dp"
+                app:shadow_Outer_Area="10dp"
+                app:shadow0_Outer_Color="@color/sombra"
+                app:shadow0_Outer_Blur="10dp" >
+
+                <ImageView
+                    android:id="@+id/ivFoto"
+                    android:layout_gravity="top|center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/redondo_blanco" />
+
+            </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+            <ImageView
+                android:id="@+id/ivCamara"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/ic_camara"
+                android:layout_gravity="bottom|center"
+                android:padding="15dp"
+                android:background="@drawable/redondo_azul"
+                android:tint="@color/blanco" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvSubirFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/azul"
+            android:text="Ingresa tu foto"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/turquesa"
+            android:text="Esta foto te identificará como pasajero"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="13sp" />
+
+        <com.sinaseyfi.advancedcardview.AdvancedCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            style="@style/cardSombra" >
+
+            <Button
+                android:id="@+id/btnFinalizarRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Finalizar registro"
+                android:paddingHorizontal="30dp"
+                style="@style/botonAzul" />
+
+        </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/flayCargando"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BF01286B"
+        android:layout_centerInParent="true"
+        android:visibility="gone" >
+
+        <com.github.jlmd.animatedcircleloadingview.AnimatedCircleLoadingView
+            android:id="@+id/circle_loading_view_r2"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            app:mainColor="@color/turquesa"
+            app:secondaryColor="@color/blanco"
+            app:textColor="@color/blanco" />
+
+    </FrameLayout>
+
+</RelativeLayout>

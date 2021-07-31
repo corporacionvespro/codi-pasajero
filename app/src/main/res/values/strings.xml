@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Codi Pasajero</string>
+
+    <plurals name="num_locations_reported">
+        <item quantity="zero">Ninguna ubicación reportada</item>
+        <item quantity="one">Se informó una ubicación</item>
+        <item quantity="other">%d ubicaciones informadas</item>
+    </plurals>
+    <string name="unknown_location">Ubicación desconocida</string>
+    <string name="title_activity_main">Map</string>
+    <string name="title_activity_lugar">Map</string>
+</resources>

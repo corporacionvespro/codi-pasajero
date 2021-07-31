@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fitsSystemWindows="true"
+    android:gravity="center" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:gravity="center" >
+
+            <FrameLayout
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/isotipo_pasajero" />
+
+                <ImageView
+                    android:id="@+id/ivFotoConductor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="15dp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvNombresConductor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tvApellidosConductor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:layout_marginBottom="10dp" />
+
+            <RatingBar
+                android:id="@+id/rbOpinion"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:numStars="5"
+                android:layout_gravity="center"
+                android:stepSize="1"
+                android:layout_marginBottom="10dp"
+                style="@style/ImageRatingBar" />
+
+            <TextView
+                android:id="@+id/tvTarifa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/azul"
+                android:textAlignment="center"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginBottom="20dp" />
+
+            <com.sinaseyfi.advancedcardview.AdvancedCardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginHorizontal="15dp"
+                style="@style/cardSombra" >
+
+                <EditText
+                    android:id="@+id/etOpinion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:hint="Su opinión..."
+                    android:background="@null"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/gris"
+                    android:textColorHint="@color/gris"
+                    android:fontFamily="@font/corsa_regular"
+                    android:textSize="15sp"
+                    android:layout_gravity="top" />
+
+            </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+            <TextView
+                android:id="@+id/tvAgregarFrecuente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Añadir a lugares favoritos"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/gris"
+                android:textSize="18sp"
+                android:drawableEnd="@drawable/ic_estrella"
+                android:drawableTint="@color/gris"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="30dp" />
+
+            <Button
+                android:id="@+id/btnAceptar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Aceptar"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginVertical="30dp"
+                style="@style/botonAzul" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

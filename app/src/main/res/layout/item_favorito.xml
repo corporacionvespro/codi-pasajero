@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <com.sinaseyfi.advancedcardview.AdvancedCardView
+        android:id="@+id/acvFavoritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        style="@style/cardSombra" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:paddingStart="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginBottom="7.5dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:paddingStart="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/azul"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginBottom="7.5dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivEditar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/redondo_turquesa"
+                android:src="@drawable/ic_editar"
+                android:tint="@color/blanco"
+                android:padding="5dp"
+                android:layout_margin="2.5dp" />
+
+            <ImageView
+                android:id="@+id/ivAceptar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/redondo_turquesa"
+                android:src="@drawable/ic_check"
+                android:tint="@color/blanco"
+                android:padding="5dp"
+                android:layout_margin="2.5dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivEliminar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/redondo_rojo"
+                android:src="@drawable/ic_eliminar"
+                android:tint="@color/blanco"
+                android:padding="5dp"
+                android:layout_marginStart="2.5dp"
+                android:layout_marginTop="2.5dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginEnd="10dp" />
+
+        </LinearLayout>
+
+    </com.sinaseyfi.advancedcardview.AdvancedCardView>
+
+</RelativeLayout>
